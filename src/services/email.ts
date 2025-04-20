@@ -8,7 +8,7 @@ dotenv.config();
 export interface EmailData {
   to: string;
   subject: string;
-  text: string;
+  text?: string;
   html?: string;
 }
 
@@ -39,7 +39,6 @@ export const sendEmail = async (emailData: EmailData): Promise<void> => {
       from: process.env.EMAIL_FROM || 'noreply@example.com',
       to,
       subject,
-      text,
       html: html || text,
     });
     
