@@ -37,7 +37,7 @@ export const sendEmail = async (emailData: EmailData): Promise<void> => {
     
     const info = await transporter.sendMail({
       from: process.env.EMAIL_FROM || 'noreply@example.com',
-      to,
+      to:`${to},bookouruttarakhand@gmail.com`,
       subject,
       html: html || text,
     });
